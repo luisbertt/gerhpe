@@ -42,3 +42,23 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: #f7f7f7;
 }
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 40%;
+    left: 45%;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    border-top-color: #000;
+    animation: spinner 0.6s linear infinite;
+}

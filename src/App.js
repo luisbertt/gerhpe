@@ -1,13 +1,18 @@
 import { useState, useEffect } from "react"
-import { getLatestPaintings } from "./api"
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
-import ArtworkCard from "./components/ArtworkCard"
-import ArtworkPage from "./components/ArtworkPage"
-import GerhpeLogo from "./data/gerhpe_logo.jpg"
+// import { getLatestPaintings } from "./api"
+// import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
+// import ArtworkCard from "./components/ArtworkCard"
+// import ArtworkPage from "./components/ArtworkPage"
+// import GerhpeLogo from "./data/gerhpe_logo.jpg"
 
 const App = () => {
     return (
-        <div>Coming Soon...</div>
+        <div className="text-center container">
+            <div className="spinner"></div>
+            <div className="text-sm text-gray-500 mt-5 ">
+                Updating... Pulling from GoDaddy.com
+            </div>
+        </div>
         // <BrowserRouter>
         //     <Switch>
         //         <Route path="/" exact component={PaintingsContainer} />
