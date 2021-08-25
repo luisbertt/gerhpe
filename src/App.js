@@ -4,11 +4,13 @@ import { useState, useEffect } from "react"
 // import ArtworkCard from "./components/ArtworkCard"
 // import ArtworkPage from "./components/ArtworkPage"
 import GerhpeLogo from "./data/gerhpe_logo.jpg"
+import Gerhpe from "./data/gerhpe.jpg"
 
 const App = () => {
     return (
         <div className="flex justify-center h-screen items-center">
-            <div className="w-60 h-50 border shadow p-4 bg-white text-center">
+            <img src={Gerhpe} alt="Gerhpe" className="absolute opacity-50" />
+            <div className="w-60 h-50 border rounded-lg shadow-2xl p-4 bg-white text-center z-10">
                 <img src={GerhpeLogo} alt="Gerhpe Logo" width="350px" />
                 <p className="text-gray-500 text-sm">Updating Site</p>
                 <div class="loader mx-auto mt-2"></div>
