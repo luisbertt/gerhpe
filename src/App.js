@@ -3,13 +3,16 @@ import { useState, useEffect } from "react"
 // import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
 // import ArtworkCard from "./components/ArtworkCard"
 // import ArtworkPage from "./components/ArtworkPage"
-// import GerhpeLogo from "./data/gerhpe_logo.jpg"
+import GerhpeLogo from "./data/gerhpe_logo.jpg"
 
 const App = () => {
     return (
-        <div className="text-center container">
-            <div className="spinner"></div>
-            <div className="text-sm text-gray-500 mt-5 ">Updating...</div>
+        <div className="flex justify-center h-screen items-center">
+            <div className="w-60 h-50 border shadow p-4 bg-white text-center">
+                <img src={GerhpeLogo} alt="Gerhpe Logo" width="350px" />
+                <p className="text-gray-500 text-sm">Updating Site</p>
+                <div class="loader mx-auto mt-2"></div>
+            </div>
         </div>
         // <BrowserRouter>
         //     <Switch>
