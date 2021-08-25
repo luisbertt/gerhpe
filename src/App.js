@@ -9,9 +9,7 @@ const App = () => {
     return (
         <div className="text-center container">
             <div className="spinner"></div>
-            <div className="text-sm text-gray-500 mt-5 ">
-                Updating... Pulling from GoDaddy.com
-            </div>
+            <div className="text-sm text-gray-500 mt-5 ">Updating...</div>
         </div>
         // <BrowserRouter>
         //     <Switch>
