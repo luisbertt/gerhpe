@@ -51,8 +51,7 @@ const ArtworkPage = ({ match }) => {
                         </div>
                         <div>
                             
-                            <a href={painting.Photo[1].thumbnails.large.url} target="_blank" rel="noreferrer"><button className="text-xl border p-2 rounded">Set Preview</button></a>
-                            {/* <img src={painting.Photo[1].thumbnails.large.url} alt={painting.Name + ' Ambientado'} className="mt-2"/> */}
+                            <a href={painting.Photo[1].thumbnails.full.url} target="_blank" rel="noreferrer"><button className="text-xl border p-2 rounded">Set Preview</button></a>
                         </div>
                     </div>
                 </div>
