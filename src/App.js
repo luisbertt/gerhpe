@@ -30,9 +30,9 @@ const Home = () => (
                 Artist Specialized in Acrylic Paintings
             </h3>
             <h3 className="text-3xl">Exclusive, Original and Unique</h3>
-            <div className="flex space-x-4">
+            <div className="md:flex space-x-4">
                 <img src={Gerhpe} alt="Gerhpe" className="mt-4" />
-                <div className="flex flex-col justify-between h-80">
+                <div className="md:flex flex-col justify-between h-80">
                     <div>
                         <h4 className="font-bold text-3xl">Next Event</h4>
                         <div className="hover:underline">
@@ -108,10 +108,10 @@ const FutureEvents = () => {
                     Hope to see you there...
                 </p>
             </div>
-            <div className="container mx-auto flex justify-between mt-10">
+            <div className="container mx-auto md:flex justify-between mt-10">
                 {events.length
                     ? events.map(event => (
-                          <div className="w-96 hover:shadow-lg bg-white">
+                          <div className="md:w-96 hover:shadow-lg bg-white">
                               <img
                                   src={
                                       event.Attachments[0].thumbnails.large.url
@@ -160,7 +160,7 @@ const PaintingsContainer = () => {
             <div className="flex flex-wrap space-x-4 justify-center">
                 {paintings.length
                     ? paintings.map((col, i) => (
-                          <div className="w-1/4" key={i}>
+                          <div className="md:w-1/4" key={i}>
                               {col.map(painting => (
                                   <Link
                                       to={`paintings/${painting.id}`}
