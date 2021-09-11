@@ -28,7 +28,7 @@ const ArtworkPage = ({ match }) => {
                     <Link to="/">Contact</Link>
                 </ul>
             </div>
-            <h1 className="md:hidden text-5xl font-bold">{painting.Name}</h1>
+            <h1 className="md:hidden text-5xl font-bold p-4">{painting.Name}</h1>
                 <div className="md:flex space-x-10">
                   
                         <div className="border p-4">
