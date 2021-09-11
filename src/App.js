@@ -43,7 +43,7 @@ const Home = () => (
                         </div>
                     </div>
                     <div>
-                        <ul className="text-3xl">
+                        <ul className="text-3xl mt-4">
                             <li>
                                 <a href="#gallery">Gallery 🖼</a>
                             </li>
@@ -157,7 +157,7 @@ const PaintingsContainer = () => {
                     If you have a Gerhpe, you have a good taste...
                 </p>
             </div>
-            <div className="md:flex flex-wrap space-x-4 justify-center">
+            <div className="md:flex md:flex-wrap md:space-x-4 justify-center">
                 {paintings.length
                     ? paintings.map((col, i) => (
                           <div className="w-96" key={i}>
