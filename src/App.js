@@ -58,7 +58,7 @@ const Home = () => (
                     </div>
                 </div>
             </div>
-            <h1 className="text-9xl font-bold absolute bottom-0 right-0">
+            <h1 className="hidden md:block text-9xl font-bold absolute bottom-0 right-0">
                 Gerhpe
             </h1>
         </div>
