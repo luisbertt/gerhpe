@@ -19,7 +19,7 @@ const ArtworkPage = ({ match }) => {
         return (
             <>
             <div className="container mx-auto"> 
-            <div className="flex space-x-20 h-full">
+            <div className="hidden md:flex space-x-20 h-full">
                 <Link to="/Home"><img src={Gerhpe} alt="" width="250px"/></Link>
                 <ul className="flex space-x-10 text-2xl m-auto">
                     <Link to="/">Home</Link>
