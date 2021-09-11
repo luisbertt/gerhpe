@@ -16,7 +16,7 @@ async function getLatestPaintings(numberOfPaintings = 100) {
             sort: [{ field: "Date Added", direction: "desc" }],
         })
         .firstPage()
-    return records.map((record) => ({ id: record.id, ...record.fields }))
+    return records.map(record => ({ id: record.id, ...record.fields }))
 }
 
 async function getLatestPaintingsByLine(line) {
@@ -28,7 +28,21 @@ async function getLatestPaintingsByLine(line) {
             sort: [{ field: "Date Added", direction: "desc" }],
         })
         .firstPage()
-    return records.map((record) => ({ id: record.id, ...record.fields }))
+    return records.map(record => ({ id: record.id, ...record.fields }))
 }
 
-module.exports = { getLatestPaintings, getLatestPaintingsByLine, getPainting }
+async function getFutureEvents() {
+    const records = await base("News&Events")
+        .select({
+            maxRecords: 3,
+        })
+        .firstPage()
+    return records.map(record => ({ id: record.id, ...record.fields }))
+}
+
+module.exports = {
+    getLatestPaintings,
+    getLatestPaintingsByLine,
+    getPainting,
+    getFutureEvents,
+}

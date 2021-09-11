@@ -1,9 +1,11 @@
 
 const ArtworkCard = ({ painting: { Name, Photo, Size } }) => (
-    <div className="border p-2 shadow-sm bg-white">
+    <div className="border p-1 shadow-lg bg-white mb-4">
         <img src={Photo[0].url} alt={Name} />
-        <h1 className="font-semibold">{Name}</h1>
-        <p className="text-sm">{Size}</p>
+        <div className="p-2">
+        <h1 className="font-bold text-2xl">{Name}</h1>
+        <p className="text-md">{Size}</p>
+        </div>
     </div>
 )
 
