@@ -40,7 +40,7 @@ async function getFutureEvents() {
     return records.map(record => ({ id: record.id, ...record.fields }))
 }
 
-module.exports = {
+export {
     getLatestPaintings,
     getLatestPaintingsByLine,
     getPainting,
