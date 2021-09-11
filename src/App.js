@@ -160,7 +160,7 @@ const PaintingsContainer = () => {
             <div className="md:flex flex-wrap space-x-4 justify-center">
                 {paintings.length
                     ? paintings.map((col, i) => (
-                          <div className="w-1/4" key={i}>
+                          <div className="w-96" key={i}>
                               {col.map(painting => (
                                   <Link
                                       to={`paintings/${painting.id}`}
