@@ -1,6 +1,7 @@
 import Contact from "../../components/Contact"
 import Menu from "../../components/Menu"
 import { getPlaiceholder } from "plaiceholder"
+import { hostname } from "../../config"
 
 const DetailsPage = ({ painting, imageProps }) => {
   const { Name, Type, Size, Author, Photo, Status, Line } = painting
@@ -13,7 +14,7 @@ const DetailsPage = ({ painting, imageProps }) => {
         <div className="bg-grayish h-4/5">
           <Menu />
           <div className="text-center">
-            <h1 className="font-playfair text-8xl mb-10">{Name}</h1>
+            <h1 className="font-playfair text-5xl md:text-8xl mb-10">{Name}</h1>
             <img
               {...imageProps}
               placeholder="blur"
@@ -34,7 +35,7 @@ const DetailsPage = ({ painting, imageProps }) => {
 
           <div
             className="mx-auto bg-white pb-10"
-            style={{ width: `${width * 10}px` }}
+            style={{ maxWidth: `${width * 10}px` }}
           >
             <h3 className="text-4xl font-playfair my-4">Details</h3>
             <hr />
@@ -67,7 +68,7 @@ export default DetailsPage
 
 export const getServerSideProps = async context => {
   const { id } = context.params
-  const res = await fetch(process.env.HOSTNAME + "/api/paintings/" + id)
+  const res = await fetch(hostname + "/api/paintings/" + id)
   const data = await res.json()
 
   const { base64, img } = await getPlaiceholder(

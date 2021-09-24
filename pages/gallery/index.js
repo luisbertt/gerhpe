@@ -2,6 +2,7 @@ import Link from "next/link"
 import Head from "next/head"
 import Menu from "../../components/Menu"
 import Contact from "../../components/Contact"
+import { hostname } from "../../config"
 
 export default function Gallery({ paintings }) {
   const grid = new Array(3)
@@ -13,28 +14,31 @@ export default function Gallery({ paintings }) {
       <Head>
         <title>Gallery | Fine Art Naples, FL</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <Menu />
 
-      <div className="px-20 py-10">
-        <h1 className="text-center font-playfair text-8xl mb-10">Gallery</h1>
-        <div className="flex mx-10 my-5 space-x-2">
+      <div className="md:px-20 py-10">
+        <h1 className="text-center font-playfair text-5xl md:text-8xl mb-10">
+          Gallery
+        </h1>
+        <div className="md:flex mx-10 my-5 md:space-x-2 space-y-2">
           <div className="p-2 text-xl font-bold font-playfair">Lines:</div>
-          <a href="/line/Impressionist" className="border p-2 rounded">
-            Impressionist
-          </a>
-          <a href="/line/Abstract" className="border p-2 rounded">
-            Abstract
-          </a>
-          <a href="/line/Ligths%20and%20Shadows" className="border p-2 rounded">
-            Lights and Shadows
-          </a>
-          <a href="/line/Luxury" className="border p-2 rounded">
-            Luxury
-          </a>
+          <div className="border p-2 rounded">
+            <a href="/line/Impressionist">Impressionist</a>
+          </div>
+          <div className="border p-2 rounded">
+            <a href="/line/Abstract">Abstract</a>
+          </div>
+          <div className="border p-2 rounded">
+            <a href="/line/Ligths%20and%20Shadows">Lights and Shadows</a>
+          </div>
+          <div className="border p-2 rounded">
+            <a href="/line/Luxury">Luxury</a>
+          </div>
         </div>
-        <div className="w-100 md:w-11/12 mx-auto flex justify-center space-x-10">
+        <div className="w-100 md:w-11/12 mx-auto md:flex justify-center md:space-x-10">
           {grid.map((col, i) => (
             <div className="flex flex-col space-y-10">
               {col.map(painting => (
@@ -64,7 +68,7 @@ const ArtworkCard = ({ painting }) => (
 )
 
 export async function getServerSideProps(context) {
-  const res = await fetch(process.env.HOSTNAME + `/api/paintings`)
+  const res = await fetch(hostname + `/api/paintings`)
   const data = await res.json()
 
   if (!data) {

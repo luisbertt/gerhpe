@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import Contact from "../components/Contact"
 import Menu from "../components/Menu"
+import { hostname } from "../config"
 
 export default function Home({ paintings }) {
   const grid = new Array(3)
@@ -10,7 +11,7 @@ export default function Home({ paintings }) {
     .map((_, i) => paintings.filter((_, j) => j % 3 === i))
 
   return (
-    <div>
+    <div className="">
       <Head>
         <title>Gerhpe | Fine Art Naples, FL</title>
         <link rel="icon" href="/favicon.ico" />
@@ -24,17 +25,20 @@ export default function Home({ paintings }) {
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
           rel="stylesheet"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <div className="h-screen bg-white font-playfair">
         <div className="bg-grayish h-4/5">
           <Menu />
           <div className="container mx-auto">
-            <h1 className="text-8xl font-bold">Gerhpe Fine Art</h1>
-            <h3 className="text-2xl mt-4">
+            <h1 className="text-5xl md:text-8xl font-bold">Gerhpe Fine Art</h1>
+            <h3 className="text-lg md:text-2xl mt-2 md:mt-4">
               Artist Specialized in Acrylic Paintings
             </h3>
-            <h3 className="text-2xl mb-4">Exclusive, Original and Unique</h3>
+            <h3 className="text-lg md:text-2xl mb-2 md:mb-4">
+              Exclusive, Original and Unique
+            </h3>
             <div className="md:flex space-x-4">
               <Image
                 src="/gerhpe.png"
@@ -43,7 +47,7 @@ export default function Home({ paintings }) {
                 alt="Gerhpe"
                 className="mt-4"
               />
-              <div className="md:flex flex-col justify-between h-80">
+              <div className="hidden md:block md:flex flex-col justify-between h-80">
                 <div>
                   <h4 className="font-bold text-lg">Next Event:</h4>
                   <a
@@ -68,11 +72,11 @@ export default function Home({ paintings }) {
         </div>
       </div>
 
-      <div id="gallery" className="bg-gray-100 px-20 mt-5 pt-10">
-        <h1 className="text-center font-playfair text-8xl mb-4">
+      <div id="gallery" className="bg-gray-100 md:px-20 mt-5 md:pt-10">
+        <h1 className="text-center font-playfair text-4xl md:text-8xl mb-4">
           Latest Paintings
         </h1>
-        <h3 className="font-playfair text-3xl text-center mb-5">
+        <h3 className="font-playfair text-xl md:text-3xl text-center mb-5">
           "If you have a Gerhpe... you have good taste"
         </h3>
         <a
@@ -81,7 +85,7 @@ export default function Home({ paintings }) {
         >
           View All
         </a>
-        <div className="w-100 md:w-11/12 mx-auto flex justify-center space-x-10">
+        <div className="w-100 md:w-11/12 mx-auto md:flex justify-center md:space-x-10">
           {grid.map((col, i) => (
             <div className="flex flex-col space-y-10">
               {col.map(painting => (
@@ -113,7 +117,7 @@ const ArtworkCard = ({ painting }) => (
 )
 
 export async function getServerSideProps() {
-  const res = await fetch(process.env.HOSTNAME + `/api/latestPaintings`)
+  const res = await fetch(hostname + `/api/latestPaintings`)
   const data = await res.json()
 
   if (!data) {

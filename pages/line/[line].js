@@ -2,6 +2,7 @@ import Link from "next/link"
 import Head from "next/head"
 import Menu from "../../components/Menu"
 import Contact from "../../components/Contact"
+import { hostname } from "../../config"
 
 export default function LinePage({ paintings, title }) {
   const grid = new Array(3)
@@ -50,7 +51,7 @@ const ArtworkCard = ({ painting }) => (
 
 export async function getServerSideProps(context) {
   const { line } = context.params
-  const res = await fetch(process.env.HOSTNAME + "/api/line/" + line)
+  const res = await fetch(hostname + "/api/line/" + line)
   const data = await res.json()
 
   if (!data || data.length == 0) {
