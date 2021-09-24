@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 const Menu = () => (
-  <nav className="text-xs p-4 md:p-10">
+  <nav className="font-playfair text-xs md:text-xl p-4 md:p-10">
     <ul className="flex space-x-2 md:space-x-10 justify-center">
       <li>
         <Link href="/">

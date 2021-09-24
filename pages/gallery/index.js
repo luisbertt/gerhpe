@@ -77,7 +77,6 @@ export async function getServerSideProps(context) {
     }
   }
 
-  console.log(data)
   return {
     props: { paintings: data },
   }
