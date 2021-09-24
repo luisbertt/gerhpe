@@ -37,7 +37,7 @@ export default function Gallery({ paintings }) {
         <div className="w-100 md:w-11/12 mx-auto flex justify-center space-x-10">
           {grid.map((col, i) => (
             <div className="flex flex-col space-y-10">
-              {col.map((painting) => (
+              {col.map(painting => (
                 <Link href={`/gallery/${painting.id}`} key={painting.id}>
                   <a>
                     <ArtworkCard painting={painting} />
@@ -64,7 +64,7 @@ const ArtworkCard = ({ painting }) => (
 )
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`http://localhost:3000/api/paintings`)
+  const res = await fetch(process.env.HOSTNAME + `/api/paintings`)
   const data = await res.json()
 
   if (!data) {

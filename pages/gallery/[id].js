@@ -5,7 +5,7 @@ import { getPlaiceholder } from "plaiceholder"
 const DetailsPage = ({ painting, imageProps }) => {
   const { Name, Type, Size, Author, Photo, Status, Line } = painting
 
-  const [width, height] = Size.split(" ").filter((number) => number !== "x")
+  const [width, height] = Size.split(" ").filter(number => number !== "x")
 
   return (
     <>
@@ -65,9 +65,9 @@ const DetailsPage = ({ painting, imageProps }) => {
 
 export default DetailsPage
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async context => {
   const { id } = context.params
-  const res = await fetch("http://localhost:3000/api/paintings/" + id)
+  const res = await fetch(process.env.HOSTNAME + "/api/paintings/" + id)
   const data = await res.json()
 
   const { base64, img } = await getPlaiceholder(
