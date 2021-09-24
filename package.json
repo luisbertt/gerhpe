@@ -1,47 +1,25 @@
 {
-  "name": "crm",
+  "name": "gerhpe",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@craco/craco": "^6.1.2",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "airtable": "^0.11.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "react-to-print": "^2.12.6",
-    "web-vitals": "^1.0.1"
-  },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@plaiceholder/next": "^2.1.0",
+    "airtable": "^0.10.1",
+    "next": "10.0.5",
+    "plaiceholder": "^2.0.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-icons": "^4.1.0"
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "postcss": "^7.0.35",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4"
+    "autoprefixer": "^10.2.1",
+    "postcss": "^8.2.4",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^2.0.2"
   }
 }
