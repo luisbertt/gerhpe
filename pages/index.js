@@ -5,7 +5,7 @@ import Contact from "../components/Contact"
 import Menu from "../components/Menu"
 import { hostname } from "../config"
 
-export default function Home({ paintings }) {
+export default function Home({ paintings, nextEvent }) {
   const grid = new Array(3)
     .fill()
     .map((_, i) => paintings.filter((_, j) => j % 3 === i))
@@ -51,16 +51,18 @@ export default function Home({ paintings }) {
                 <div>
                   <h4 className="font-bold text-lg">Next Event:</h4>
                   <a
-                    href="https://www.neptunefestival.com/events/neptune-festival-art-craft-show"
+                    href={nextEvent[0].Link}
                     className="hover:underline"
                     target="_blank"
                     rel="nonreferrer"
                   >
-                    <p className="text-3xl font-bold">
-                      Neptune Festival Art & Craft Show
+                    <p className="text-3xl font-bold">{nextEvent[0].Name}</p>
+                    <p className="text-xl">{nextEvent[0].Notes}</p>
+                    <p className="text-xl">
+                      {new Date(nextEvent[0].StartDate).toLocaleDateString() +
+                        "-" +
+                        new Date(nextEvent[0].EndDate).toLocaleDateString()}
                     </p>
-                    <p className="text-xl">Virginia Beach, VA</p>
-                    <p className="text-xl">Sep 24-26 | 12pm-7pm</p>
                   </a>
                 </div>
               </div>
@@ -119,6 +121,8 @@ const ArtworkCard = ({ painting }) => (
 export async function getServerSideProps() {
   const res = await fetch(hostname + `/api/latestPaintings`)
   const data = await res.json()
+  const resEvent = await fetch(hostname + "/api/events/nextEvent")
+  const dataEvent = await resEvent.json()
 
   if (!data) {
     return {
@@ -127,6 +131,6 @@ export async function getServerSideProps() {
   }
 
   return {
-    props: { paintings: data },
+    props: { paintings: data, nextEvent: dataEvent },
   }
 }
