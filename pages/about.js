@@ -14,20 +14,20 @@ export default function Gallery() {
 
       <Menu />
 
-      <div className="md:px-20 py-10 h-screen">
+      <div className="md:px-20 py-10">
         <h1 className="text-center font-playfair text-5xl md:text-8xl mb-10">
           Biography
         </h1>
-        <div className="flex">
+        <div className="md:flex">
           <Image
             src="/bio.jpg"
             width={700}
             height={500}
             alt="Gerhpe Bio"
-            className="mt-4"
+            className="mt-4 w-full md:w-1/2"
           />
 
-          <div className="w-1/2 p-4 text-justify">
+          <div className="w-full md:w-1/2 p-4 text-justify">
             <p>
               <span className="font-playfair text-2xl font-bold ">
                 Gerhson J Pernia (Gerhpe)
