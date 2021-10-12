@@ -9,12 +9,16 @@ const Contact = () => (
     <h4 className="md:text-4xl text-center mt-4">
       Send us an Email✉️ for Inquiries at
       <br />
-      <b className="underline">Info@gerhpe.com</b>
+      <b className="underline">
+        <a href="mailto:info@gerhpe.com">Info@gerhpe.com</a>
+      </b>
     </h4>
     <h4 className="md:text-4xl text-center mt-4">
       ...or Call Us at
       <br />
-      <b className="underline">(239) 297-7805</b>
+      <b className="underline">
+        <a href="tel:2392977805">(239) 297-7805</a>
+      </b>
     </h4>
   </div>
 )
