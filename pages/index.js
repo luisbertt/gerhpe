@@ -11,7 +11,7 @@ export default function Home({ paintings, nextEvent }) {
     .map((_, i) => paintings.filter((_, j) => j % 3 === i))
 
   return (
-    <div className="">
+    <div>
       <Head>
         <title>Gerhpe | Fine Art Naples, FL</title>
         <link rel="icon" href="/favicon.ico" />
