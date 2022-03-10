@@ -47,7 +47,7 @@ export default function Gallery({ paintings }) {
                 </div>
                 <div className="w-100 md:w-11/12 mx-auto md:flex justify-center md:space-x-10">
                     {grid.map((col, i) => (
-                        <div className="flex flex-col space-y-10">
+                        <div key={i} className="flex flex-col space-y-10">
                             {col.map(painting => (
                                 <Link
                                     href={`/gallery/${painting.id}`}
@@ -69,7 +69,7 @@ export default function Gallery({ paintings }) {
 }
 
 const ArtworkCard = ({ painting }) => (
-    <div className="">
+    <div>
         <img src={painting.Photo[0].thumbnails.large.url} />
         <h3 className="text-lg font-bold mt-4">{painting.Name}</h3>
         <p>{painting.Size} in</p>
