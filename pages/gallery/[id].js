@@ -2,11 +2,11 @@ import Contact from "../../components/Contact"
 import Menu from "../../components/Menu"
 import { getPlaiceholder } from "plaiceholder"
 import { hostname } from "../../config"
+import Flickity from "react-flickity-component"
+import "flickity/css/flickity.css"
 
 const DetailsPage = ({ painting, imageProps }) => {
     const { Name, Type, Size, Author, Photo, Status, Line } = painting
-
-    const [width, height] = Size.split(" ").filter(number => number !== "x")
 
     return (
         <>
@@ -17,31 +17,42 @@ const DetailsPage = ({ painting, imageProps }) => {
                         <h1 className="font-playfair text-5xl md:text-8xl mb-10">
                             {Name}
                         </h1>
-                        <img
-                            {...imageProps}
-                            placeholder="blur"
-                            width={width * 10}
-                            height={height * 10}
-                            className="shadow-2xl mx-auto"
-                        />
-                        <a
-                            href={Photo[1] ? Photo[1].url : "#"}
-                            target="_blank"
-                            rel="nonreferrer"
-                        >
-                            <button className="bg-white mx-auto border rounded text-xl p-2 mt-6">
-                                Preview
-                            </button>
-                        </a>
+                        <Flickity>
+                            <img
+                                style={{
+                                    marginLeft: "5em",
+                                    marginRight: "5em",
+                                }}
+                                {...imageProps}
+                                src={Photo[0].url}
+                                placeholder="blur"
+                                className="shadow-2xl mx-auto"
+                            />
+                            <img
+                                style={{
+                                    marginLeft: "5em",
+                                    marginRight: "5em",
+                                }}
+                                src={Photo[1].url}
+                                width={600}
+                                placeholder="blur"
+                                className="shadow-2xl mx-auto"
+                            />
+                        </Flickity>
                     </div>
 
                     <div
-                        className="mx-auto bg-white pb-10"
-                        style={{ maxWidth: `${width * 10}px` }}
+                        className="pt-5 mx-auto bg-white pb-10"
+                        style={{ maxWidth: `500px` }}
                     >
-                        <h3 className="text-4xl font-playfair my-4">Details</h3>
+                        <div className="flex justify-between mt-4">
+                            <h3 className="text-4xl font-playfair">Details</h3>
+                            <span className="bg-green-400 px-2 py-1 rounded h-8">
+                                {Status}
+                            </span>
+                        </div>
                         <hr />
-                        <div className="my-5 text-xl font-playfair">
+                        <div className="my-5 text-xl">
                             <p>
                                 Size:{" "}
                                 <span className="text-2xl">{Size} in</span>
@@ -52,10 +63,6 @@ const DetailsPage = ({ painting, imageProps }) => {
                             <p>
                                 Author:{" "}
                                 <span className="text-2xl">{Author}</span>
-                            </p>
-                            <p>
-                                Status:{" "}
-                                <span className="text-2xl">{Status}</span>
                             </p>
                             <p>
                                 Line: <span className="text-2xl">{Line}</span>
