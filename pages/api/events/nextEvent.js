@@ -12,7 +12,7 @@ function minifyRecords(records) {
 export default async (req, res) => {
     const records = await table
         .select({
-            maxRecords: 1,
+            maxRecords: 100,
             filterByFormula: `IS_AFTER({StartDate}, TODAY())`,
             sort: [{ field: "StartDate", direction: "asc" }],
         })
