@@ -33,33 +33,35 @@ export default function Home({ paintings, nextEvent }) {
                                 className="mt-4"
                             />
                             <div className="hidden md:flex flex-col justify-between h-80">
-                                <div>
-                                    <h4 className="font-bold text-lg">
-                                        Next Event:
-                                    </h4>
-                                    <a
-                                        href={nextEvent[0].Link}
-                                        className="hover:underline"
-                                        target="_blank"
-                                        rel="nonreferrer"
-                                    >
-                                        <p className="text-3xl font-bold">
-                                            {nextEvent[0].Name}
-                                        </p>
-                                        <p className="text-xl">
-                                            {nextEvent[0].Notes}
-                                        </p>
-                                        <p className="text-xl">
-                                            {new Date(
-                                                nextEvent[0].StartDate
-                                            ).toLocaleDateString() +
-                                                "-" +
-                                                new Date(
-                                                    nextEvent[0].EndDate
-                                                ).toLocaleDateString()}
-                                        </p>
-                                    </a>
-                                </div>
+                                {nextEvent.length > 0 ? (
+                                    <div>
+                                        <h4 className="font-bold text-lg">
+                                            Next Event:
+                                        </h4>
+                                        <a
+                                            href={nextEvent[0].Link}
+                                            className="hover:underline"
+                                            target="_blank"
+                                            rel="nonreferrer"
+                                        >
+                                            <p className="text-3xl font-bold">
+                                                {nextEvent[0].Name}
+                                            </p>
+                                            <p className="text-xl">
+                                                {nextEvent[0].Notes}
+                                            </p>
+                                            <p className="text-xl">
+                                                {new Date(
+                                                    nextEvent[0].StartDate
+                                                ).toLocaleDateString() +
+                                                    "-" +
+                                                    new Date(
+                                                        nextEvent[0].EndDate
+                                                    ).toLocaleDateString()}
+                                            </p>
+                                        </a>
+                                    </div>
+                                ) : null}
                             </div>
                         </div>
                     </div>
