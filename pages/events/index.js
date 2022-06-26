@@ -23,7 +23,11 @@ export default function Gallery({ events }) {
                 {events.map(event => (
                     <div className="flex space-x-4 mt-4">
                         <img
-                            src={event.Attachments[0].thumbnails.large.url}
+                            src={
+                                event.Attachmentst
+                                    ? event.Attachments[0].thumbnails.large.url
+                                    : null
+                            }
                             width={400}
                         />
                         <div>
