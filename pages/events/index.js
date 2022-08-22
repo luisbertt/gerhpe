@@ -24,7 +24,7 @@ export default function Gallery({ events }) {
                     <div className="flex space-x-4 mt-4">
                         <img
                             src={
-                                event.Attachmentst
+                                event.Attachments
                                     ? event.Attachments[0].thumbnails.large.url
                                     : null
                             }
