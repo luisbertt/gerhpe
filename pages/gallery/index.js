@@ -44,6 +44,9 @@ export default function Gallery({ paintings }) {
                     <div className="border p-2 rounded">
                         <a href="/line/Luxury">Luxury</a>
                     </div>
+                    <div className="border p-2 rounded">
+                        <a href="/line/Tranquility">Tranquility</a>
+                    </div>
                 </div>
                 <div className="w-100 md:w-11/12 mx-auto md:flex justify-center md:space-x-10">
                     {grid.map((col, i) => (
