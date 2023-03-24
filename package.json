@@ -11,18 +11,18 @@
         "@plaiceholder/next": "^2.1.0",
         "airtable": "^0.10.1",
         "flickity": "^3.0.0",
-        "next": "10.0.5",
+        "next": "12",
         "plaiceholder": "^2.0.1",
-        "react": "17.0.1",
-        "react-dom": "17.0.1",
-        "react-flickity-component": "^3.6.2",
+        "react": "17",
+        "react-dom": "^17.0.2",
+        "react-flickity-component": "^4.0.5",
         "react-icons": "^4.1.0",
         "sharp": "^0.29.2"
     },
     "devDependencies": {
-        "autoprefixer": "^10.2.1",
-        "postcss": "^8.2.4",
-        "postcss-preset-env": "^6.7.0",
-        "tailwindcss": "^2.0.2"
+        "autoprefixer": "^10.4.14",
+        "postcss": "^8.4.21",
+        "postcss-preset-env": "^8.0.1",
+        "tailwindcss": "^3.2.7"
     }
 }
