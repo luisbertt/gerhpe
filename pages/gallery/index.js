@@ -73,7 +73,10 @@ export default function Gallery({ paintings }) {
 
 const ArtworkCard = ({ painting }) => (
     <div>
-        <img src={painting.Photo[0].thumbnails.large.url} />
+        {console.log(painting)}
+        {painting.Photo && painting.Photo[0] && (
+            <img src={painting.Photo[0]?.thumbnails.large.url} />
+        )}
         <h3 className="text-lg font-bold mt-4">{painting.Name}</h3>
         <p>{painting.Size} in</p>
         <p>{painting.Type}</p>
