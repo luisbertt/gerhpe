@@ -73,7 +73,6 @@ export default function Gallery({ paintings }) {
 
 const ArtworkCard = ({ painting }) => (
     <div>
-        {console.log(painting)}
         {painting.Photo && painting.Photo[0] && (
             <img src={painting.Photo[0]?.thumbnails.large.url} />
         )}
