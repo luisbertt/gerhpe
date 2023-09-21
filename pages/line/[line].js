@@ -46,8 +46,10 @@ export default function LinePage({ paintings, title }) {
 }
 
 const ArtworkCard = ({ painting }) => (
-    <div className="">
-        <img src={painting.Photo[0].thumbnails.large.url} />
+    <div>
+        {painting.Photo && painting.Photo[0] && (
+            <img src={painting.Photo[0]?.thumbnails.large.url} />
+        )}
         <h3 className="text-lg font-bold mt-4">{painting.Name}</h3>
         <p>{painting.Size} in</p>
         <p>{painting.Type}</p>
