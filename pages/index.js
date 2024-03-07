@@ -52,11 +52,11 @@ export default function Home({ paintings, nextEvent }) {
                                             </p>
                                             <p className="text-xl">
                                                 {new Date(
-                                                    nextEvent[0].StartDate
+                                                    nextEvent[0].StartDate,
                                                 ).toLocaleDateString() +
                                                     "-" +
                                                     new Date(
-                                                        nextEvent[0].EndDate
+                                                        nextEvent[0].EndDate,
                                                     ).toLocaleDateString()}
                                             </p>
                                         </a>

@@ -1,6 +1,6 @@
 const Airtable = require("airtable")
-const { AIRTABLE_API_KEY, AIRTABLE_BASE_ID } = process.env
-const base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(AIRTABLE_BASE_ID)
+const { AIRTABLE_API_TOKEN } = process.env
+const base = Airtable.configure({ apiKey: AIRTABLE_API_TOKEN })
 const table = base("Paintings")
 
 function minifyRecords(records) {
